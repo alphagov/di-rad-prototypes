@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'GDX Visiongit remote add origin https://github.com/soniaturcotte/gdx-vision.git',
+  serviceName: 'GDX Vision'
 
   // Default port that prototype runs on
   port: '3000',
