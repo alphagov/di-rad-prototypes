@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Consent to share your information – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,15 +18,15 @@
       </h1>
 
       <p>The Government Data Exchange will share your information with your new employer.</p>
+      <p>You can enter the employers details in the next step.</p>
 
-      <p>For details about how we store and process your information, see our <a href="#">privacy notice (opens in a new tab)</a>.</p>
-     
+    
       <p>Do you consent to share:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>your UK passport</li>
         <li>your Basic DBS check</li>
       </ul>
-      <form class="form" action="#" method="post">
+      <form class="form" action="employer-details" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="data-consent-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -52,6 +52,8 @@
       </div>
       <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
+      <p>For details about how we store and process your information, see our <a href="#">privacy notice (opens in a new tab)</a>.</p>
+     
     </div>
   </div>
 
