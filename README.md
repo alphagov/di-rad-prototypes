@@ -1,5 +1,5 @@
-# gdx-vision
+# gdx-vision-prototypes
 
 Automatically deploys to: 
 
-https://gdx-vision.up.railway.app/
+https://gds-vision-prototypes-production.up.railway.app
