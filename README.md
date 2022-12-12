@@ -2,4 +2,4 @@
 
 Automatically deploys to: 
 
-https://gds-vision-prototypes-production.up.railway.app
+https://gdx-vision-prototypes.herokuapp.com
