@@ -1,12 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Employer details – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
+  {{ super() }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
+{% endblock %}}
 
 {% block content %}
 

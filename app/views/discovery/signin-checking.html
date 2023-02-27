@@ -1,10 +1,11 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Searching for your GOV.UK account
 {% endblock %}
 
 {% block beforeContent %}
+  {{ super() }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
@@ -16,9 +17,9 @@ Searching for your GOV.UK account
       <form class="form" action="signin-password" method="get">
 
         <h1 class="govuk-heading-l">Searching for your GOV.UK account</h1>
-  
+
         <div class="ccms-loader ccms-loader__fast govuk-!-margin-bottom-6"></div>
-  
+
           <button id="button2" class="govuk-button govuk-!-margin-top-4 govuk-visually-hidden" data-module="govuk-button">Continue</button>
       </form>
 
@@ -27,14 +28,14 @@ Searching for your GOV.UK account
 
   <script type="text/javascript">
     spinnerTimer()
-  
+
     function spinnerTimer() {
       setTimeout(function () {
         // proceed
         document.getElementById('button2').click()
       }, 2000)
     }
-  
+
   </script>
 
 {% endblock %}

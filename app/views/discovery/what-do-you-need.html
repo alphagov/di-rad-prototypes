@@ -1,12 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   What do you need to share – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
+  {{ super() }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
+{% endblock %}}
 
 {% block content %}
 
@@ -57,15 +58,15 @@
                 </label>
               </div>
             </div>
-            
+
           </div>
-        
+
           </fieldset>
-          
+
           <button class="govuk-button" data-module="govuk-button">Continue</button>
         </div>
 
-        
+
 
       </form>
 

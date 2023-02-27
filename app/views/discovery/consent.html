@@ -1,12 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Consent to share your information – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
+  {{ super() }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
+{% endblock %}}
 
 {% block content %}
 
@@ -21,7 +22,7 @@
       </p>
 
       <p>For details about how we store and process your information, see our <a href="#">privacy notice (opens in a new tab)</a>.</p>
-    
+
       <p>Do you consent to share:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>HM Passport Office sharing your passport details with GDS</li>
@@ -48,14 +49,14 @@
               </label>
             </div>
           </div>
-      
+
         </fieldset>
-        
+
       </div>
       <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
-      
-     
+
+
     </div>
   </div>
 
