@@ -1,0 +1,103 @@
+#!njk
+{% extends "layouts/tgo.html" %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+    Before you start – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">
+                Before you start
+            </h1>
+
+            <p class="govuk-body">
+                Make sure you have the information you need before you start. You cannot save and return.
+            </p>
+            <p class="govuk-body">
+                To keep your information secure, if you pause and do not enter anything for more than 20 minutes your
+                answers will be deleted and you will need to start again. You can extend your time before this happens.
+            </p>
+
+            {{ govukInsetText({
+                text: "If you need to go back to an earlier page, you will need to use the back links at the top of each page in
+        this service. The back button in your web browser will not work."
+            }) }}
+
+            <p class="govuk-body">When you have finished, you will be able to save or print a list of the organisations
+                you
+                have notified.</p>
+
+            <h2 class="govuk-heading-m">Check you have everything you need</h2>
+
+            <p class="govuk-body">
+                You will need:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your Tell Us Once reference number</li>
+                <li>the name and date of death of the person who’s died</li>
+                <li>the name and address of the hospital, care home or hospice if they died there</li>
+                <li>National Insurance number or date of birth of the surviving spouse</li>
+                <li>details of the next of kin (closest relative by blood or marriage)</li>
+                <li>details of the person or company dealing with the estate (property, belongings and money)</li>
+            </ul>
+
+            <p class="govuk-body">
+                It also helps if you can provide the National Insurance number of the person who’s died.
+                It makes it easier and quicker for organisations to match them on their records. But this is not
+                essential.
+            </p>
+
+            <h2 class="govuk-heading-m">Depending on who you want to notify, you may need:</h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>their passport number and town of birth (to cancel a British passport)</li>
+                <li>their driving licence number (to cancel a licence)</li>
+                <li>vehicle registration numbers of any vehicles they owned to remove them as the registered keeper and
+                    cancel the vehicle tax (the vehicle will need to be taxed again straight away before it’s used)
+                </li>
+                <li>the name of their local council and which services they were getting, such as Housing Benefit or
+                    Council
+                    Tax reduction
+                </li>
+                <li>their National Insurance number if you want to tell public or armed forces pension schemes</li>
+                <li>to know if they were getting benefits, tax credits or State Pension so we can notify the right
+                    department
+                </li>
+            </ul>
+
+            <p class="govuk-body">
+                Before giving details of the next of kin or person or company dealing with the estate, you will need
+                their
+                permission.
+            </p>
+
+            <form class="form" action="02-find-death" method="post">
+                <h2 class="govuk-heading-l">Authority and consent</h2>
+                {{ govukRadios({
+                    classes: "govuk-radios--inline",
+                    name: "changed-name",
+                    fieldset: { legend: {
+                        text: "Are you the next of kin or the person dealing with the estate, and if not, do you have the authority
+            to act on their behalf?",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                    },
+                    items: [ { value: "yes", text: "Yes" }, { value: "no", text: "No" } ]
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">Confirm</button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
