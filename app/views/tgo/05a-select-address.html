@@ -1,0 +1,55 @@
+{% extends "../layouts/main.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Select address
+      </h1>
+
+      <form class="form" action="05d-confirm-address" method="post">
+
+        {{ govukRadios({
+          name: "address",
+          fieldset: {
+            legend: {
+              html: "<p class=\"govuk-body\">3 addresses found for <b>BS31 8BS</b> and <b>33</b>. <a href=\"05-your-contact-details\">Search again</a></p>"
+            }
+          },
+          items: [
+            {
+              value: "33",
+              text: "33 Arcadia Gardens, Bristol, BS31 8BS"
+            },
+            {
+              value: "33a",
+              text: "33A Arcadia Gardens, Bristol, BS31 8BS"
+            },
+            {
+              value: "33b",
+              text: "33B Arcadia Gardens, Bristol, BS31 8BS"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Use this address</button>
+        <p class="govuk-body"><a href="05c-enter-address-manually">Enter address manually</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

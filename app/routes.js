@@ -43,3 +43,31 @@ router.post('/tgo/keeper-of-vehicle-redirect', function (req, res) {
         ? res.redirect('/tgo/10a-what-to-do-about-vehicles')
         : res.redirect('/tgo/11-driving-license')
 })
+
+router.post('/tgo/search-address-redirect', function (req, res) {
+    switch (req.session.data['house-number-name']) {
+        case "0":
+            res.redirect('/tgo/05b-no-address-found')
+            break;
+        case "1":
+            res.redirect('/tgo/05d-confirm-address')
+            break;
+        default:
+            res.redirect('/tgo/05a-select-address')
+            break;
+    }
+})
+
+router.post('/tgo/further-address-search-redirect', function (req, res) {
+    switch (req.session.data['further-address-house-number-name']) {
+        case "0":
+            res.redirect('/tgo/06c-further-address-no-address-found')
+            break;
+        case "1":
+            res.redirect('/tgo/06e-confirm-further-address')
+            break;
+        default:
+            res.redirect('/tgo/06b-select-further-address')
+            break;
+    }
+})

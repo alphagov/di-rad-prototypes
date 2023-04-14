@@ -1,7 +1,7 @@
 {% extends "layouts/tgo.html" %}
 
 {% block pageTitle %}
-  Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
+  Your address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,13 +18,31 @@
         Your contact details
       </h1>
 
-      <form class="form" action="06-other-addresses" method="post">
+      <h2 class="govuk-heading-m">
+        Find your address
+      </h2>
+      <form class="form" action="search-address-redirect" method="post">
 
-        <p>[Insert question content here]</p>
+        {{ govukInput({
+          label: {
+            text: "House number or name"
+          },
+          classes: "govuk-input--width-10",
+          id: "house-number-name",
+          name: "house-number-name"
+        }) }}
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
+        }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p class="govuk-body"><a href="05c-enter-address-manually">Enter address manually</a></p>
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
 
       </form>
 

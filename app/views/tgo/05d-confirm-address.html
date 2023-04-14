@@ -1,0 +1,37 @@
+{% extends "../layouts/main.html" %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Confirm address
+      </h1>
+
+      <form class="form" action="05e-further-contact-details" method="post">
+
+        {{ govukInsetText({
+          text: "33 Arcadia Gardens, Bristol, BS31 8BS"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Use this address</button>
+
+        <p class="govuk-body"><a href="05c-enter-address-manually.html">Enter address manually</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
