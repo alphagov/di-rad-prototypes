@@ -1,0 +1,52 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Relationship to deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="married-or-civil-partnership-redirect" method="post">
+
+        <p>
+          {{ govukRadios({
+            name: "married-or-civil-partnership",
+            fieldset: {
+              legend: {
+                text: "Your relationship to the deceased",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Were you married to or in a civil partnership with the deceased?"
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+        </p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

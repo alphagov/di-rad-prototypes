@@ -1,0 +1,56 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Blue badge – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="blue-badge-redirect" method="post">
+
+        <p>
+          {{ govukRadios({
+            name: "has-blue-badge",
+            fieldset: {
+              legend: {
+                text: "Did the person have a Blue Badge?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "This is issued to people who have physical disabilities by the council"
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              },
+              {
+                value: "not-sure",
+                text: "I'm not sure"
+              }
+            ]
+          }) }}
+        </p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
