@@ -1,4 +1,5 @@
 {% extends "layouts/tgo.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% block pageTitle %}
   Registration details – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,13 +22,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Sarah Philips
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> name</span>
-            </a>
+            Jane Smith
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -35,118 +30,94 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            5 January 1978
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
-            </a>
+            04/10/1950
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact information
+            Registration district
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact information</span>
-            </a>
+            Lewisham
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact details
+            Date of death
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>07700 900457</p>
-            <p>sarah.phillips@example.com</p>
+            20/01/2023
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> contact details</span>
-            </a>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of registration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            27/01/2023
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Application details</h2>
+      <h2 class="govuk-heading-m">Address</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Previous application number
+            House number or name
           </dt>
           <dd class="govuk-summary-list__value">
-            502135326
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> previous application number</span>
-            </a>
+            15
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Licence type
+            Road
           </dt>
           <dd class="govuk-summary-list__value">
-            For personal use
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence type</span>
-            </a>
+            Bradville Gardens
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Home address
+            Town/City
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> home address</span>
-            </a>
+            Bristol
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Licence period
+            County
           </dt>
           <dd class="govuk-summary-list__value">
-            Valid for 6 months
+            Avon and Somerset
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence period</span>
-            </a>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BS41 9AS
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country
+          </dt>
+          <dd class="govuk-summary-list__value">
+            United Kingdom
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      {{ govukDetails({
+        summaryText: "If any of these details are wrong",
+        text: "Details"
+      }) }}
 
       <form action="04-married-or-civil-partnership" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
