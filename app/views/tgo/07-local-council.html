@@ -1,4 +1,7 @@
 {% extends "layouts/tgo.html" %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
 
 {% block pageTitle %}
   Local council – {{ serviceName }} – GOV.UK Prototype Kit
@@ -20,10 +23,34 @@
 
       <form class="form" action="08-registered-to-vote" method="post">
 
-        <p>[Insert question content here]</p>
+        <p class="govuk-body">Our records indicate their local council was:</p>
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+        {{ govukInsetText({
+          html: "<b>Lancaster City Council</b>"
+        }) }}
 
+        {{ govukRadios({
+          name: "correct-local-council",
+          fieldset: {
+            legend: {
+              text: "Is this correct?"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "not-sure",
+              text: "I'm not sure"
+            }
+          ]
+        }) }}
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>

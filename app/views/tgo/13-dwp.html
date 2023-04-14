@@ -1,4 +1,6 @@
 {% extends "layouts/tgo.html" %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
   Department for Work and Pensions – {{ serviceName }} – GOV.UK Prototype Kit
@@ -12,18 +14,48 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
         We can inform the Department of Work and Pensions about the person who has died
       </h1>
+      <p class="govuk-body">We can notify about the death, DWP will then contact you about applying for bereavement support. </p>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="14-hmrc" method="post">
 
-        <p>[Insert question content here]</p>
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+        {{ govukWarningText({
+          html: "<p><b>If the person who died received any of the following payments, these will stop within 3 weeks:</b></p>
+            <ul class=\"govuk-list govuk-list--bullet\"><b>
 
+<li>Assistance or attendance allowance</li>
+<li>Carers allowance</li>
+<li>Benefits like Universal credit or PiP</li>
+<li>State pension payments</li></b></ul>",
+          iconFallbackText: "Warning"
+        }) }}
+
+        {{ govukRadios({
+          name: "inform-dwp",
+          fieldset: {
+            legend: {
+              text: "Do you want to inform DWP now?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, inform DWP"
+            },
+            {
+              value: "no",
+              text: "No, I do not want to inform DWP"
+            }
+          ]
+        }) }}
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
