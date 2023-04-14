@@ -12,32 +12,32 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Do you have permission from the spouse, next of kin or person dealing with the estate?</h1>
+    </div>
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="do-you-have-permission-redirect" method="post">
 
-        <p>
-          {{ govukRadios({
-            name: "do-you-have-permission",
-            fieldset: {
-              legend: {
-                text: "Do you have permission from the spouse, next of kin or person dealing with the estate?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "do-you-have-permission",
+          fieldset: {
+            legend: {
+              text: "Details go here"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
-          }) }}
-        </p>
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

@@ -12,31 +12,31 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Were you the next of kin?</h1>
+    </div>
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="next-of-kin-redirect" method="post">
 
-        <p>
-          {{ govukRadios({
-            name: "next-of-kin",
-            fieldset: {
-              legend: {
-                text: "Were you the next of kin?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "next-of-kin",
+          fieldset: {
+            legend: {
+              text: "This includes - TBD"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
-          }) }}
-        </p>
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

@@ -12,38 +12,34 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Was the person the registered keeper of a vehicle?</h1>
+    </div>
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="keeper-of-vehicle-redirect" method="post">
 
-        <p>
-          {{ govukRadios({
-            name: "keeper-of-vehicle",
-            fieldset: {
-              legend: {
-                text: "Was the person the registered keeper of a vehicle?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            hint: {
+        {{ govukRadios({
+          name: "keeper-of-vehicle",
+          fieldset: {
+            legend: {
               text: "This includes vehicles issued as part of a disability support package"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              },
-              {
-                value: "not-sure",
-                text: "I'm not sure"
-              }
-            ]
-          }) }}
-        </p>
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "not-sure",
+              text: "I'm not sure"
+            }
+          ]
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
