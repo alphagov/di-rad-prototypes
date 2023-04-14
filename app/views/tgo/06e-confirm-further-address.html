@@ -1,0 +1,35 @@
+{% extends "../layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Confirm address
+      </h1>
+
+      <form class="form" action="07-local-council" method="post">
+
+        {{ govukInsetText({
+          text: "15A Highgate Road, London, NW5 1TL"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Use this address</button>
+
+        <p class="govuk-body"><a href="05c-enter-address-manually.html">Enter address manually</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

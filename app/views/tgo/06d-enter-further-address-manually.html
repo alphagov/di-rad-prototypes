@@ -1,0 +1,74 @@
+{% extends "../layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Enter address manually
+      </h1>
+
+      <form class="form" action="06e-confirm-further-address" method="post">
+
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "further-address-line-1",
+          name: "further-address-line-1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "further-address-line-2",
+          name: "further-address-line-2"
+        }) }}
+
+        {{ govukInput({
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Town or city"
+          },
+          id: "further-address-town-or-city",
+          name: "further-address-town-or-city"
+        }) }}
+
+        {{ govukInput({
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "County (optional)"
+          },
+          id: "further-address-county",
+          name: "further-address-county"
+        }) }}
+
+        {{ govukInput({
+          classes: "govuk-input--width-10",
+          label: {
+            text: "Postcode"
+          },
+          id: "further-address-postcode",
+          name: "further-address-postcode"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

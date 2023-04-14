@@ -1,0 +1,53 @@
+{% extends "../layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Select address
+      </h1>
+
+      <form class="form" action="06e-confirm-further-address" method="post">
+
+        {{ govukRadios({
+          name: "address",
+          fieldset: {
+            legend: {
+              html: "<p class=\"govuk-body\">3 addresses found for <b>NW5 1TL</b> and <b>15</b>. <a href=\"06a-what-is-other-address\">Search again</a></p>"
+            }
+          },
+          items: [
+            {
+              value: "15",
+              text: "15 Highgate Road, London, NW5 1TL"
+            },
+            {
+              value: "15a",
+              text: "15A Highgate Road, London, NW5 1TL"
+            },
+            {
+              value: "15b",
+              text: "15B Highgate Road, London, NW5 1TL"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Use this address</button>
+        <p class="govuk-body"><a href="06d-enter-further-address-manually">Enter address manually</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

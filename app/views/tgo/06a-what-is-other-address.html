@@ -1,4 +1,6 @@
 {% extends "layouts/tgo.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
   Other addresses for the deceased – {{ serviceName }} – GOV.UK Prototype Kit
@@ -12,20 +14,34 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
         What was the other address?
       </h1>
 
-      <form class="form" action="07-local-council" method="post">
+      <form class="form" action="further-address-search-redirect" method="post">
 
-        <p>[Insert question content here]</p>
+        {{ govukInput({
+          label: {
+            text: "House number or name"
+          },
+          classes: "govuk-input--width-10",
+          id: "further-address-house-number-name",
+          name: "further-address-house-number-name"
+        }) }}
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "further-address-postcode",
+          name: "further-address-postcode"
+        }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-
+        <p class="govuk-body"><a href="06d-enter-further-address-manually">Enter address manually</a></p>
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
       </form>
 
     </div>
