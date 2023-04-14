@@ -12,35 +12,32 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Other addresses for the deceased</h1>
+    </div>
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="other-addresses-redirect" method="post">
 
-        <p>
-          {{ govukRadios({
-            name: "has-other-addresses",
-            fieldset: {
-              legend: {
-                text: "Other addresses for the deceased",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            hint: {
+        {{ govukRadios({
+          name: "has-other-addresses",
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
               text: "Was the deceased living at another address before they died?"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
-          }) }}
-        </p>
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

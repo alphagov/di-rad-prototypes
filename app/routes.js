@@ -3,7 +3,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 router.post('/tgo/married-or-civil-partnership-redirect', function (req, res) {
-    req.session.data['married-or-in-civil-partnership'] === "yes"
+    req.session.data['married-or-civil-partnership'] === "yes"
         ? res.redirect('/tgo/05-your-contact-details')
         : res.redirect('/tgo/04a-next-of-kin')
 })
@@ -15,7 +15,7 @@ router.post('/tgo/next-of-kin-redirect', function (req, res) {
 })
 
 router.post('/tgo/managing-estate-redirect', function (req, res) {
-    req.session.data['married-or-in-civil-partnership'] === "yes"
+    req.session.data['managing-estate'] === "yes"
         ? res.redirect('/tgo/05-your-contact-details')
         : res.redirect('/tgo/04c-do-you-have-permission')
 })
