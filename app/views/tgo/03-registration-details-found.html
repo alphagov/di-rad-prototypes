@@ -114,7 +114,10 @@
 
       {{ govukDetails({
         summaryText: "If any of these details are wrong",
-        text: "Details"
+        html: "<p class=\"govuk-body\">You cannot continue using Tell Government Once if any of the registration details are wrong.</p>
+<p class=\"govuk-body\"><b>What you need to do next</b></p>
+<p class=\"govuk-body\">Contact the register office where the death was registered. Explain that the death registration details are wrong on Tell Government Once.</p>
+<p class=\"govuk-body\">The registrar will be able to correct the details and give you a new Tell Government Once reference number to use.</p>"
       }) }}
 
       <form action="04-married-or-civil-partnership" method="post" novalidate>
