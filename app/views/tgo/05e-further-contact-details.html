@@ -1,0 +1,48 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Further contact details
+      </h1>
+
+      <form class="form" action="06-other-addresses" method="post">
+
+        {{ govukInput({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Contact telephone number (optional)"
+          },
+          id: "phone-number",
+          name: "phone-number"
+        }) }}
+
+        {{ govukInput({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address (optional)"
+          },
+          id: "email-address",
+          name: "email-address"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
