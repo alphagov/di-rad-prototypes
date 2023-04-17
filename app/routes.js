@@ -47,13 +47,13 @@ router.post('/tgo/keeper-of-vehicle-redirect', function (req, res) {
 router.post('/tgo/search-address-redirect', function (req, res) {
     switch (req.session.data['house-number-name']) {
         case "0":
-            res.redirect('/tgo/05b-no-address-found')
+            res.redirect('/tgo/05c-no-address-found')
             break;
         case "1":
-            res.redirect('/tgo/05d-confirm-address')
+            res.redirect('/tgo/05e-confirm-address')
             break;
         default:
-            res.redirect('/tgo/05a-select-address')
+            res.redirect('/tgo/05b-select-address')
             break;
     }
 })
