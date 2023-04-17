@@ -18,31 +18,45 @@
         Your contact details
       </h1>
 
-      <h2 class="govuk-heading-m">
-        Find your address
-      </h2>
-      <form class="form" action="search-address-redirect" method="post">
-
+      <form class="form" action="05a-find-address" method="post">
         {{ govukInput({
+          classes: "govuk-input--width-20",
           label: {
-            text: "House number or name"
+            text: "First name"
           },
-          classes: "govuk-input--width-10",
-          id: "house-number-name",
-          name: "house-number-name"
+          id: "first-name",
+          name: "first-name"
         }) }}
 
         {{ govukInput({
+          classes: "govuk-input--width-20",
           label: {
-            text: "Postcode"
+            text: "Last name"
           },
-          classes: "govuk-input--width-10",
-          id: "postcode",
-          name: "postcode"
+          id: "last-name",
+          name: "last-name"
         }) }}
 
-        <p class="govuk-body"><a href="05c-enter-address-manually">Enter address manually</a></p>
-        <button class="govuk-button" data-module="govuk-button">Find address</button>
+        {{ govukInput({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Contact telephone number (optional)"
+          },
+          id: "phone-number",
+          name: "phone-number"
+        }) }}
+
+
+        {{ govukInput({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address (optional)"
+          },
+          id: "email-address",
+          name: "email-address"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 

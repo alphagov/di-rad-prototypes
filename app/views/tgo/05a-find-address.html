@@ -15,30 +15,30 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Further contact details
+        Find your address
       </h1>
-
-      <form class="form" action="06-other-addresses" method="post">
+      <form class="form" action="search-address-redirect" method="post">
 
         {{ govukInput({
-          classes: "govuk-input--width-20",
           label: {
-            text: "Contact telephone number (optional)"
+            text: "House number or name"
           },
-          id: "phone-number",
-          name: "phone-number"
+          classes: "govuk-input--width-10",
+          id: "house-number-name",
+          name: "house-number-name"
         }) }}
 
         {{ govukInput({
-          classes: "govuk-input--width-20",
           label: {
-            text: "Email address (optional)"
+            text: "Postcode"
           },
-          id: "email-address",
-          name: "email-address"
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p class="govuk-body"><a href="05d-enter-address-manually">Enter address manually</a></p>
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
 
       </form>
 
