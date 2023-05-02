@@ -1,0 +1,48 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Relationship to deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Are you the next of kin?</h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="next-of-kin-redirect" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "next-of-kin",
+          fieldset: {
+            legend: {
+              text: "This might be a close relative, partner, or someone nominated by the person who has died."
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

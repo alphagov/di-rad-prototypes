@@ -1,0 +1,53 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Public section pension – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        We found a public sector pension
+      </h1>
+
+      <form class="form" action="16-check-your-answers" method="post">
+
+        <p class="govuk-body">We have identified an active public sector pension for the deceased with NHS Pensions (England and Wales)</p>
+
+        {{ govukRadios({
+          name: "inform-pension-provider",
+          fieldset: {
+            legend: {
+              text: "Do you want us to inform the provider?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, inform the pension provider"
+            },
+            {
+              value: "no",
+              text: "No, I do not want to inform the provider"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

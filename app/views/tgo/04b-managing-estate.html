@@ -1,0 +1,49 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Relationship to deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Are you managing the estate of the deceased person?</h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="managing-estate-redirect" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "managing-estate",
+          fieldset: {
+            legend: {
+              text: "Are you responsible for the estate as an executor or administrator?"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

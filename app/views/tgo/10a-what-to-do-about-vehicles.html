@@ -1,0 +1,33 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Vehicles – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What to do about the vehicles
+      </h1>
+
+      <form class="form" action="11-driving-license" method="post">
+
+        <p class="govuk-body">Vehicle tax is linked to an individual and not the vehicle. This means that the tax is cancelled upon the death of the holder.</p>
+        <p class="govuk-body">To make sure each vehicle can still be used legally, you will need to <a href="https://www.gov.uk/tell-dvla-about-bereavement/keeping-the-vehicle">inform DVLA of the change and to tax it in your own name</a>.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
