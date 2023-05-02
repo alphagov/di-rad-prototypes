@@ -18,11 +18,10 @@
         Confirm address
       </h1>
 
-      <form class="form" action="07-local-council" method="post">
-
-        {{ govukInsetText({
-          text: "15A Highgate Road, London, NW5 1TL"
-        }) }}
+      <form class="form" action="07-local-council" method="get">
+        <div class="govuk-inset-text">
+          {{ data['other-address'] }}
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Use this address</button>
 

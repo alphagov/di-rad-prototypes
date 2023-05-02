@@ -16,24 +16,20 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
       <h1 class="govuk-heading-l">
-        {% if data['has-other-addresses'] == 'yes' %}
         Local councils that we will notify about their death
-        {% else %}
-        Local council that we will notify about their death
-        {% endif %}
       </h1>
 
-      <form class="form" action="07-local-council" method="post">
+      <form class="form" action="08-in-hospital" method="get">
         <p class="govuk-body">For this address</p>
         <div class="govuk-inset-text">
-          {{ data['address'] }}
+          {{ data['other-address'] }}
         </div>
-
         <p class="govuk-body">Our records indicate their local council was:</p>
 
         {{ govukInsetText({
-          html: "<b>Bristol City Council</b>"
+          html: "<b>Lancaster City Council</b>"
         }) }}
 
         {{ govukRadios({

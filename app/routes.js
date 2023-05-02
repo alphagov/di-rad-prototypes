@@ -32,6 +32,18 @@ router.post('/tgo/other-addresses-redirect', function (req, res) {
         : res.redirect('/tgo/07-local-council')
 })
 
+router.post('/tgo/07-local-council', (req, res) => {
+    req.session.data['has-other-addresses'] === "yes"
+        ? res.redirect('/tgo/07b-local-council')
+        : res.redirect('/tgo/08-in-hospital')
+})
+
+router.post('/tgo/08-in-hospital', (req, res) => {
+    req.session.data['in-hospital'] === "yes"
+        ? res.redirect('/tgo/08b-which-hospital')
+        : res.redirect('/tgo/09-council-services')
+})
+
 router.post('/tgo/blue-badge-redirect', function (req, res) {
     req.session.data['has-blue-badge'] === "yes"
         ? res.redirect('/tgo/09a-what-to-do-about-blue-badge')

@@ -2,7 +2,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
-  Voter registration – {{ serviceName }} – GOV.UK Prototype Kit
+  Were they in hospital – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,18 +13,20 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Was the person registered to vote (with Bristol City Council)?</h1>
-    </div>
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="09-blue-badge" method="post">
+      <form class="form" action="08-in-hospital" method="post">
 
         {{ govukRadios({
-          name: "registered-to-vote",
+          name: "in-hospital",
           fieldset: {
             legend: {
-              text: "Was the deceased person registered to vote at their home address?"
+              text: "Were they in hospital for 28 days or more before their death?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
             }
+          },
+          hint: {
+            text: 'The Department of Work and Pensions will use this to determine any benefit adjustments, if the person was receiving them.'
           },
           items: [
             {

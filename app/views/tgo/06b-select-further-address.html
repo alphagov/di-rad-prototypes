@@ -21,7 +21,7 @@
       <form class="form" action="06e-confirm-further-address" method="post">
 
         {{ govukRadios({
-          name: "address",
+          name: "other-address",
           fieldset: {
             legend: {
               html: "<p class=\"govuk-body\">3 addresses found for <b>NW5 1TL</b> and <b>15</b>. <a href=\"06a-what-is-other-address\">Search again</a></p>"
@@ -29,15 +29,15 @@
           },
           items: [
             {
-              value: "15",
+              value: "15 Highgate Road, London, NW5 1TL",
               text: "15 Highgate Road, London, NW5 1TL"
             },
             {
-              value: "15a",
+              value: "15A Highgate Road, London, NW5 1TL",
               text: "15A Highgate Road, London, NW5 1TL"
             },
             {
-              value: "15b",
+              value: "15B Highgate Road, London, NW5 1TL",
               text: "15B Highgate Road, London, NW5 1TL"
             }
           ]

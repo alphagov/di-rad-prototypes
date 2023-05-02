@@ -21,9 +21,9 @@
 
       <form class="form" action="06-other-addresses" method="post">
 
-        {{ govukInsetText({
-          text: "33 Arcadia Gardens, Bristol, BS31 8BS"
-        }) }}
+        <div class="govuk-inset-text">
+          {{ data['address'] }}
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Use this address</button>
 
