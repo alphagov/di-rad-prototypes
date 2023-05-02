@@ -12,9 +12,6 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Other addresses for the deceased</h1>
-    </div>
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="other-addresses-redirect" method="post">
@@ -24,8 +21,17 @@
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {
-              text: "Was the deceased living at a different address, including a hospital or care home, before they died?"
+              text: "Was the person living at a different address?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
             }
+          },
+          hint: {
+            html: '
+        <p>You have confirmed their main address as:</p>
+        <div class="govuk-inset-text">33 Arcadia Gardens, Bristol, BS31 8BS</div>
+        <p>If they were  living at another address to the above then we may need to inform a different council about their death, for updating things like council tax or housing benefit accounts.</p>
+        '
           },
           items: [
             {
