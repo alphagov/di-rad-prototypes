@@ -20,13 +20,13 @@
 
       <form class="form" action="17-check-your-answers" method="get">
 
-        <p class="govuk-body">We have identified an active public sector pension for the deceased with NHS Pensions (England and Wales)</p>
+        <p class="govuk-body">We have identified an active public sector pension for the deceased with My Civil Service pension</p>
 
         {{ govukRadios({
           name: "inform-pension-provider",
           fieldset: {
             legend: {
-              text: "Do you want us to inform the provider?",
+              text: "Do you want us to inform the provider which is My Civil Service pension?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -34,11 +34,11 @@
           items: [
             {
               value: "yes",
-              text: "Yes, inform the pension provider"
+              text: "Yes, inform the pension provider My Civil Service pension"
             },
             {
               value: "no",
-              text: "No, I do not want to inform the provider"
+              text: "No, I do not want to inform the provider My Civil Service pension"
             }
           ]
         }) }}
