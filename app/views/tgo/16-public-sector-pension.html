@@ -1,7 +1,7 @@
 {% extends "layouts/tgo.html" %}
 
 {% block pageTitle %}
-  Vehicles – {{ serviceName }} – GOV.UK Prototype Kit
+  Public section pension – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,31 +12,33 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Was the person the registered keeper of one or more vehicles?</h1>
-    </div>
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="keeper-of-vehicle-redirect" method="post">
+
+      <h1 class="govuk-heading-l">
+        We found a public sector pension
+      </h1>
+
+      <form class="form" action="17-check-your-answers" method="get">
+
+        <p class="govuk-body">We have identified an active public sector pension for the deceased with NHS Pensions (England and Wales)</p>
 
         {{ govukRadios({
-          name: "keeper-of-vehicle",
+          name: "inform-pension-provider",
           fieldset: {
             legend: {
-              text: "This includes vehicles issued as part of a disability support package"
+              text: "Do you want us to inform the provider?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes, inform the pension provider"
             },
             {
               value: "no",
-              text: "No"
-            },
-            {
-              value: "not-sure",
-              text: "I'm not sure"
+              text: "No, I do not want to inform the provider"
             }
           ]
         }) }}

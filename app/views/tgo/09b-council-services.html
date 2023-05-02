@@ -1,0 +1,87 @@
+{% extends "layouts/tgo.html" %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{% block pageTitle %}
+    Bristol Council services – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+    {{ super() }}
+    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">We will inform Lancaster City Council about the person who has died</h1>
+            <p class="govuk-body">Lancaster City Council may contact you with follow up information.</p>
+
+            {{ govukWarningText({
+                text: "If the person who died lived in council accommodation, paid council tax, or received housing benefit there may be changes and the relevant team will contact you with updates.",
+                iconFallbackText: "Warning"
+            }) }}
+
+            <form class="form" action="09b-council-services" method="post">
+
+                {{ govukCheckboxes({
+                    name: "nationality",
+                    fieldset: {
+                        legend: {
+                            text: "Which of these service teams would you like to inform?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--m"
+                        }
+                    },
+                    items: [
+                        {
+                            value: "electoral",
+                            text: "Electoral services",
+                            hint: {text: "who will remove their name from the electoral register used for voting"}
+                        },
+                        {
+                            value: "council-housing",
+                            text: "Council housing team",
+                            hint: {text: "if they were living in council accommodation"}
+                        },
+                        {
+                            value: "housing-benefit",
+                            text: "Housing benefit team",
+                            hint: {text: "if they received housing benefit"}
+                        },
+                        {
+                            value: "council-tax",
+                            text: "Council tax team",
+                            hint: {text: "if they were paying council tax or recieved a discount"}
+                        },
+                        {
+                            value: "adult-services",
+                            text: "Adult services",
+                            hint: {text: "if they received any financial assistance for care at home or in a nursing home, or other services like meals on wheels"}
+                        },
+                        {
+                            value: "library-team",
+                            text: "Library team",
+                            hint: {text: "to cancel their library membership"}
+                        },
+                        {
+                            divider: "or"
+                        },
+                        {
+                            value: "all",
+                            text: "I'm not sure of their circumstances, inform all the council teams",
+                            behaviour: "exclusive"
+                        }
+                    ]
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

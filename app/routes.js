@@ -2,6 +2,7 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
+
 router.post('/tgo/married-or-civil-partnership-redirect', function (req, res) {
     req.session.data['married-or-civil-partnership'] === "yes"
         ? res.redirect('/tgo/05-your-contact-details')
@@ -43,17 +44,30 @@ router.post('/tgo/08-in-hospital', (req, res) => {
         ? res.redirect('/tgo/08b-which-hospital')
         : res.redirect('/tgo/09-council-services')
 })
+const blueBadgePicker = (req, res) => {
+    req.session.data['has-other-addresses'] === "yes"
+        ? res.redirect('/tgo/10a-blue-badge-multi-council')
+        : res.redirect('/tgo/10-blue-badge')
+}
 
-router.post('/tgo/blue-badge-redirect', function (req, res) {
-    req.session.data['has-blue-badge'] === "yes"
-        ? res.redirect('/tgo/09a-what-to-do-about-blue-badge')
-        : res.redirect('/tgo/10-keeper-of-vehicle')
+router.post('/tgo/09-council-services', (req, res) => {
+    req.session.data['has-other-addresses'] === "yes"
+        ? res.redirect('/tgo/09b-council-services')
+        : blueBadgePicker(req, res)
 })
 
-router.post('/tgo/keeper-of-vehicle-redirect', function (req, res) {
+router.post('/tgo/09b-council-services', blueBadgePicker)
+
+router.post('/tgo/10-blue-badge', (req, res) => {
+    req.session.data['blue-badge'].includes("yes")
+        ? res.redirect("/tgo/10b-what-to-do-about-blue-badge")
+        : res.redirect("/tgo/11-keeper-of-vehicle")
+})
+
+router.post('/tgo/11-keeper-of-vehicle', (req, res) => {
     req.session.data['keeper-of-vehicle'] === "yes"
-        ? res.redirect('/tgo/10a-what-to-do-about-vehicles')
-        : res.redirect('/tgo/11-driving-license')
+        ? res.redirect('/tgo/11a-what-to-do-about-vehicles')
+        : res.redirect('/tgo/12-driving-license')
 })
 
 router.post('/tgo/search-address-redirect', function (req, res) {

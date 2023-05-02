@@ -3,7 +3,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
-  Department for Work and Pensions – {{ serviceName }} – GOV.UK Prototype Kit
+  HMRC – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,31 +16,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        We can inform the Department of Work and Pensions about the person who has died
+        We can inform His Majesty’s Revenue and Customs about the person who has died
       </h1>
-      <p class="govuk-body">We can notify about the death, DWP will then contact you about applying for bereavement support. </p>
+      <p class="govuk-body">We can notify  HMRC about the death for you.</p>
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="14-hmrc" method="post">
+      <form class="form" action="16-public-sector-pension" method="get">
 
 
         {{ govukWarningText({
-          html: "<p><b>If the person who died received any of the following payments, these will stop within 3 weeks:</b></p>
+          html: "<p><b>HMRC administers various benefits and tax-related accounts, including</b></p>
             <ul class=\"govuk-list govuk-list--bullet\"><b>
 
-<li>Assistance or attendance allowance</li>
-<li>Carers allowance</li>
-<li>Benefits like Universal credit or PiP</li>
-<li>State pension payments</li></b></ul>",
+<li>Tax credits</li>
+<li>Child benefit</li>
+<li>Tax-free Childcare</li>
+<li>Help to Save account</li>
+<li>Pension tax record</li>
+<li>Pay as You Earn (PAYE)</li>
+<li>Self Assessment</li>
+<li>Inheritance Tax</li>
+</b></ul>",
           iconFallbackText: "Warning"
         }) }}
 
         {{ govukRadios({
-          name: "inform-dwp",
+          name: "inform-hmrc",
           fieldset: {
             legend: {
-              text: "Do you want to inform DWP now?",
+              text: "Do you want to inform HMRC now?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -48,14 +53,15 @@
           items: [
             {
               value: "yes",
-              text: "Yes, inform DWP"
+              text: "Yes, inform HMRC"
             },
             {
               value: "no",
-              text: "No, I do not want to inform DWP"
+              text: "No, I do not want to inform HMRC"
             }
           ]
         }) }}
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
