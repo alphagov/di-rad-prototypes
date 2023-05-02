@@ -16,7 +16,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form class="form" action="10-blue-badge" method="post">
+            <form class="form" action="09-blue-badge" method="post">
 
                 {{ govukRadios({
                     name: "blue-badge",
@@ -27,6 +27,7 @@
                             classes: "govuk-fieldset__legend--l"
                         }
                     },
+                    hint: {text: "This is a disabled parking permit issued by the council"},
                     items: [
                         {
                             value: "yes-bristol",

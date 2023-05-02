@@ -104,41 +104,36 @@ router.post('/tgo/v2/other-addresses-redirect', function (req, res) {
         : res.redirect('/tgo/v2/07-local-council')
 })
 
-router.post('/tgo/v2/07-local-council', (req, res) => {
+router.post('/tgo/v2/07a-council-services', (req, res) => {
     req.session.data['has-other-addresses'] === "yes"
         ? res.redirect('/tgo/v2/07b-local-council')
         : res.redirect('/tgo/v2/08-in-hospital')
 })
 
+const blueBadgePicker = (req, res) => {
+    req.session.data['has-other-addresses'] === "yes"
+        ? res.redirect('/tgo/v2/09a-blue-badge-multi-council')
+        : res.redirect('/tgo/v2/09-blue-badge')
+}
+
 router.post('/tgo/v2/08-in-hospital', (req, res) => {
     req.session.data['in-hospital'] === "yes"
         ? res.redirect('/tgo/v2/08b-which-hospital')
-        : res.redirect('/tgo/v2/09-council-services')
-})
-const blueBadgePicker = (req, res) => {
-    req.session.data['has-other-addresses'] === "yes"
-        ? res.redirect('/tgo/v2/10a-blue-badge-multi-council')
-        : res.redirect('/tgo/v2/10-blue-badge')
-}
-
-router.post('/tgo/v2/09-council-services', (req, res) => {
-    req.session.data['has-other-addresses'] === "yes"
-        ? res.redirect('/tgo/v2/09b-council-services')
         : blueBadgePicker(req, res)
 })
 
-router.post('/tgo/v2/09b-council-services', blueBadgePicker)
+router.post('/tgo/v2/08b-which-hospital', blueBadgePicker)
 
-router.post('/tgo/v2/10-blue-badge', (req, res) => {
+router.post('/tgo/v2/09-blue-badge', (req, res) => {
     req.session.data['blue-badge'].includes("yes")
-        ? res.redirect("/tgo/v2/10b-what-to-do-about-blue-badge")
-        : res.redirect("/tgo/v2/11-keeper-of-vehicle")
+        ? res.redirect("/tgo/v2/09b-what-to-do-about-blue-badge")
+        : res.redirect("/tgo/v2/10-keeper-of-vehicle")
 })
 
-router.post('/tgo/v2/11-keeper-of-vehicle', (req, res) => {
+router.post('/tgo/v2/10-keeper-of-vehicle', (req, res) => {
     req.session.data['keeper-of-vehicle'] === "yes"
-        ? res.redirect('/tgo/v2/11a-what-to-do-about-vehicles')
-        : res.redirect('/tgo/v2/12-driving-license')
+        ? res.redirect('/tgo/v2/10a-what-to-do-about-vehicles')
+        : res.redirect('/tgo/v2/11-driving-license')
 })
 
 router.post('/tgo/v2/search-address-redirect', function (req, res) {
