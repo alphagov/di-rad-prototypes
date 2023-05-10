@@ -1,0 +1,263 @@
+{% extends "layouts/tgo.html" %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{% block pageTitle %}
+    What to do when someone dies - checklist – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-!-margin-bottom-4">
+                <a href="#">Print or save this page</a>
+            </div>
+            <h1 class="govuk-heading-l">What to do when someone dies - checklist</h1>
+            <p class="govuk-body">To help you further, we've put together a checklist of the things you may need to do
+                after someone has died.</p>
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "What to do in the first 5 days",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "Notify the family doctor"
+                    },
+                    {
+                        value: "employment-tribunal",
+                        text: "Find the will - the solicitor of the person who's died may have a copy if you can't find one"
+                    },
+                    {
+                        value: "MOD",
+                        text: "Begin funeral arrangements - you will need to check the will for any special requests"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "If there is a will",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        html: "In England and Wales, contact the executor to enable them to start the process of obtaining probate<br/><br/>In Scotland, apply for confirmation from the sheriff court. There is a simplified procedure for estates worth £36,000 or less in Scotland"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "If there is no will",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        html: "In England or Wales, decide who will be dealing with the estate of the person who has died. Contact the Probate Registry to apply for letters of administration.<br/><br/>In Scotland, apply to the sheriff court for confirmation. There is a strict order of preference of who can apply to the sheriff court for appointment as executor dative"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Making a new will",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "Surviving relatives and friends of the person who's died may need to make a new will"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Who else to contact",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "Relatives and friends"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Employer"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "School"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Solicitor/accountant"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Financial Organisations",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "General insurance companies - contents, car, travel, medical etc"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Rental, hire purchase or loan agreements"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "If the person who's died was named on an insurance policy, contact the provider to check that the insurance will continue"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Pension providers/Life insurance companies"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Banks and building societies"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Mortgage provider"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Credit card providers/store cards"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Utilities and household contacts",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "Landlord or local authority for a rented property"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Any private organisation/agency providing home help"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Utility companies"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Royal Mail"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "TV/internet subscriptions"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Other Considerations",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        text: "Bereavement Register and Deceased Preference Service - this will remove the name of the person who's died from mailing lists"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Cancel membership of clubs, trade unions, associations with seasonal membership"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Inform church/regular place of worship"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Dentist and other medical providers"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Creditors"
+                    },
+                    {
+                        value: "hmrc",
+                        text: "Debtors"
+                    }
+                ]
+            }) }}
+
+            {{ govukCheckboxes({
+                name: "organisation",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                    legend: {
+                        text: "Benefits and financial help",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                        value: "hmrc",
+                        html: "Check what you could be entitled to at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.gov.uk/benefits-calculators\">www.gov.uk/benefits-calculators</a>"
+                    }
+                ]
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}
