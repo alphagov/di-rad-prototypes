@@ -15,30 +15,38 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        We found a public sector pension
+        We found multiple public sector pensions
       </h1>
 
       <form class="form" action="16-check-your-answers" method="get">
 
-        <p class="govuk-body">We have identified an active public sector pension for the deceased with My Civil Service pension</p>
+        <p class="govuk-body">We have identified an active public sector pension for the deceased</p>
 
-        {{ govukRadios({
-          name: "inform-pension-provider",
+        {{ govukCheckboxes({
+          name: "pension",
           fieldset: {
             legend: {
-              text: "Do you want us to inform the provider which is My Civil Service pension?",
-              isPageHeading: false,
+              text: "Who do you want us to inform?",
+              isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "yes",
-              text: "Yes, inform the pension provider My Civil Service pension"
+              value: "civil-service",
+              text: "My Civil Service pension"
             },
             {
-              value: "no",
-              text: "No, I do not want to inform the provider My Civil Service pension"
+              value: "nhs",
+              text: "NHS England and Wales"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None",
+              behaviour: "exclusive"
             }
           ]
         }) }}
