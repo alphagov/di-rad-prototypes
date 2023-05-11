@@ -16,7 +16,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l">We will inform Bristol City Council about the person who has died</h1>
+            <h1 class="govuk-heading-l">We will inform Bristol City Council about the death</h1>
             <p class="govuk-body">Bristol City Council may contact you with follow up information.</p>
 
             {{ govukWarningText({
@@ -39,32 +39,37 @@
                         {
                             value: "electoral",
                             text: "Electoral services",
-                            hint: {text: "who will remove their name from the electoral register used for voting"}
+                            hint: {text: "To remove the person from the register used for voting in local and national elections"}
                         },
                         {
                             value: "council-housing",
                             text: "Council housing team",
-                            hint: {text: "if they were living in council accommodation"}
+                            hint: {text: "If they lived in council accommodation"}
                         },
                         {
                             value: "housing-benefit",
                             text: "Housing benefit team",
-                            hint: {text: "if they received housing benefit"}
+                            hint: {text: "If the received housing benefit"}
                         },
                         {
                             value: "council-tax",
                             text: "Council tax team",
-                            hint: {text: "if they were paying council tax or recieved a discount"}
+                            hint: {text: "If they paid council tax or they received a discount or exemption"}
                         },
                         {
                             value: "adult-services",
                             text: "Adult services",
-                            hint: {text: "if they received any financial assistance for care at home or in a nursing home, or other services like meals on wheels"}
+                            hint: {text: "If they received financial assistance for care at home or for being in a nursing home. Or if they received other services like Meals on Wheels"}
                         },
                         {
                             value: "library-team",
                             text: "Library team",
-                            hint: {text: "to cancel their library membership"}
+                            hint: {text: "If they had library membership"}
+                        },
+                        {
+                            value: "concessionary-travel",
+                            text: "Concessionary travel",
+                            hint: {text: "If they had a bus or travel pass issued by the council"}
                         },
                         {
                             divider: "or"

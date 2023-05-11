@@ -18,9 +18,9 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         {% if data['has-other-addresses'] == 'yes' %}
-        Local councils that we will notify about their death
+        Local councils to notify about the death
         {% else %}
-        Local council that we will notify about their death
+        Local council to notify about the death
         {% endif %}
       </h1>
 
@@ -30,7 +30,7 @@
           {{ data['address'] }}
         </div>
 
-        <p class="govuk-body">Our records indicate their local council was:</p>
+        <p class="govuk-body">Our records indicate the local council was:</p>
 
         {{ govukInsetText({
           html: "<b>Bristol City Council</b>"
@@ -58,8 +58,9 @@
             }
           ]
         }) }}
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p class="govuk-body">In areas with more than one level of council, for example where there are county and district councils, notifications will be directed to the relevant authority.</p>
 
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
 
     </div>
