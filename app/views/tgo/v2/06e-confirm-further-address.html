@@ -20,7 +20,12 @@
 
       <form class="form" action="07-local-council" method="get">
         <div class="govuk-inset-text">
-          {{ data['other-address'] }}
+          {% if data['other-addresses'] %}
+            {{ data['other-address'] }}
+          {% else %}
+            15 Highgate Road, London, NW5 1TL
+          {% endif %}
+
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Use this address</button>

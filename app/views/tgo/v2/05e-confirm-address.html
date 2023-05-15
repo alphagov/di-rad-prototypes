@@ -22,7 +22,11 @@
       <form class="form" action="06-other-addresses" method="post">
 
         <div class="govuk-inset-text">
-          {{ data['address'] }}
+          {% if data['address'] %}
+            {{ data['address'] }}
+          {% else %}
+            33 Arcadia Gardens, Bristol, BS31 8BS
+          {% endif %}
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Use this address</button>

@@ -24,7 +24,11 @@
       <form class="form" action="07c-council-services" method="get">
         <p class="govuk-body">For this address</p>
         <div class="govuk-inset-text">
-          {{ data['other-address'] }}
+          {% if data['other-address'] %}
+            {{ data['other-address'] }}
+          {% else %}
+            15 Highgate Road, London, NW5 1TL
+          {% endif %}
         </div>
         <p class="govuk-body">Our records indicate their local council was:</p>
 
