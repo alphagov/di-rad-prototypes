@@ -1,0 +1,70 @@
+{% extends "layouts/tgo.html" %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  HMRC – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        We can inform His Majesty’s Revenue and Customs about the death
+      </h1>
+      <p class="govuk-body">We can notify  HMRC about the death.</p>
+
+      <form class="form" action="16-public-sector-pension" method="get">
+
+
+        {{ govukWarningText({
+          html: "<p><b>HMRC administers various benefits and tax-related accounts, including</b></p>
+            <ul class=\"govuk-list govuk-list--bullet\"><b>
+
+<li>Tax credits</li>
+<li>Child benefit</li>
+<li>Tax-free Childcare</li>
+<li>Help to Save account</li>
+<li>Pension tax record</li>
+<li>Pay as You Earn (PAYE)</li>
+<li>Self Assessment</li>
+<li>Inheritance Tax</li>
+</b></ul>",
+          iconFallbackText: "Warning"
+        }) }}
+
+        {{ govukRadios({
+          name: "inform-hmrc",
+          fieldset: {
+            legend: {
+              text: "Do you want to inform HMRC now?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, inform HMRC"
+            },
+            {
+              value: "no",
+              text: "No, I will inform HMRC myself"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

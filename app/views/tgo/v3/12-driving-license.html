@@ -1,0 +1,32 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Driving license – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        We found a driving licence
+      </h1>
+
+      <form class="form" action="13-passport" method="get">
+
+        <p class="govuk-body">The Driver and Vehicle Licensing Agency (DVLA) has confirmed that the person who has died had an active driving licence.</p>
+        <p class="govuk-body">The DVLA will now cancel this licence and a letter will be be sent to confirm its cancellation. You can cut up the photo card license and do not need to return it to the DVLA.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

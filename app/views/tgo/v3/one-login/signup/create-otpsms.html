@@ -1,0 +1,61 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+    Sign In – GOV.UK One Login – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                Enter your mobile phone number
+            </h1>
+
+            <p class="govuk-body">We will send a 6 digit security code to the number you give us.</p>
+
+            <form class="form" action="create-check-sms" method="get">
+
+                <div class="govuk-form-group">
+
+                    <label class="govuk-label" for="mobileNumber">UK mobile phone number</label>
+
+                    <input class="govuk-input govuk-!-width-two-thirds" id="mobileNumber" name="mobileNumber" type="tel"
+                           spellcheck="false" autocomplete="tel">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        </legend>
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="no-phone" name="contact" type="checkbox"
+                                       value="phone" data-aria-controls="conditional-contact">
+                                <label class="govuk-label govuk-checkboxes__label" for="no-phone">
+                                    I do not have a UK mobile number
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                 id="conditional-contact">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="phone">
+                                        Mobile phone number
+                                    </label>
+                                    <div id="hint" class="govuk-hint">
+                                        Include the country code, for example +3537777666555
+                                    </div>
+                                    <input class="govuk-input govuk-!-width-one-half" id="phone" name="contact-by-phone"
+                                           type="tel" spellcheck="false" autocomplete="false">
+                                </div>
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

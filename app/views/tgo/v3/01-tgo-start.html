@@ -1,0 +1,54 @@
+{% extends "layouts/tgo.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+Start – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+            Tell Government Once
+        </h1>
+
+        <p class="govuk-body">
+            Tell Government Once is a service that lets you report a death to most government organisations in one go.
+        </p>
+        <p class="govuk-body">[Text that explains that the user has an option to start a new report or returned to a new
+            one]</p>
+
+
+        <form class="form" action="01-tgo-start" method="post">
+            {{ govukRadios({
+            name: "changed-name",
+            fieldset: { legend: {
+            text: "What do you want to do?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+            }
+            },
+            items: [
+            {
+                value: "start-new",
+                text: "Start a new report",
+                hint: {text: "You can save your progress at any point. You'll need a GOV.UK One Login. If you don't have one you can create one." }
+            },
+            {
+                value: "resume",
+                text: "Resume a saved report",
+                hint: {text: "You'll need to sign in to your GOV.UK One Login." }
+            }
+            ]
+            }) }}
+
+            <button class="govuk-button" data-module="govuk-button">Confirm</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

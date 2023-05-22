@@ -1,0 +1,48 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Find your address
+      </h1>
+      <form class="form" action="search-address-redirect" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "House number or name"
+          },
+          classes: "govuk-input--width-10",
+          id: "house-number-name",
+          name: "house-number-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+        <p class="govuk-body"><a href="06d-enter-address-manually">Enter address manually</a></p>
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

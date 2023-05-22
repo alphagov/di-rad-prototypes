@@ -1,0 +1,61 @@
+{% extends "layouts/tgo.html" %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+    Before you start – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">
+                Before you start
+            </h1>
+
+            <h2 class="govuk-heading-m">Check you have everything you need</h2>
+
+            <p class="govuk-body">
+                You will need:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your Tell Us Once reference number</li>
+                <li>the name and date of death of the person who’s died</li>
+                <li>the name and address of the hospital, care home or hospice if they died there</li>
+                <li>National Insurance number or date of birth of the surviving spouse</li>
+                <li>details of the next of kin (closest relative by blood or marriage)</li>
+                <li>details of the person or company dealing with the estate (property, belongings and money)</li>
+            </ul>
+
+            <h2 class="govuk-heading-m">Depending on who you want to notify, you may need:</h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>vehicle registration numbers of any vehicles they owned to remove them as the registered keeper and
+                    cancel the vehicle tax (the vehicle will need to be taxed again straight away before it’s used)
+                </li>
+                <li>the name of their local council and which services they were getting, such as Housing Benefit or
+                    Council
+                    Tax reduction
+                </li>
+                <li>to know if they were getting benefits, tax credits or State Pension so we can notify the right
+                    department
+                </li>
+            </ul>
+
+            <p class="govuk-body">
+                When you have finished, you will be able to save or print a list of the organisations you have notified.
+            </p>
+
+            <a href="03-find-death" role="button" draggable="false"
+               class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+               data-module="govuk-button">
+                Continue
+            </a>
+
+        </div>
+    </div>
+
+{% endblock %}

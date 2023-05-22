@@ -168,76 +168,76 @@ router.post('/tgo/v2/further-address-search-redirect', function (req, res) {
 
 router.post('/tgo/v3/married-or-civil-partnership-redirect', function (req, res) {
     req.session.data['married-or-civil-partnership'] === "yes"
-        ? res.redirect('/tgo/v3/05-your-contact-details')
-        : res.redirect('/tgo/v3/04a-next-of-kin')
+        ? res.redirect('/tgo/v3/06-your-contact-details')
+        : res.redirect('/tgo/v3/05a-next-of-kin')
 })
 
 router.post('/tgo/v3/next-of-kin-redirect', function (req, res) {
     req.session.data['next-of-kin'] === "yes"
-        ? res.redirect('/tgo/v3/05-your-contact-details')
-        : res.redirect('/tgo/v3/04b-managing-estate')
+        ? res.redirect('/tgo/v3/06-your-contact-details')
+        : res.redirect('/tgo/v3/05b-managing-estate')
 })
 
 router.post('/tgo/v3/managing-estate-redirect', function (req, res) {
     req.session.data['managing-estate'] === "yes"
-        ? res.redirect('/tgo/v3/05-your-contact-details')
-        : res.redirect('/tgo/v3/04c-do-you-have-permission')
+        ? res.redirect('/tgo/v3/06-your-contact-details')
+        : res.redirect('/tgo/v3/05c-do-you-have-permission')
 })
 
 router.post('/tgo/v3/do-you-have-permission-redirect', function (req, res) {
     req.session.data['do-you-have-permission'] === "yes"
-        ? res.redirect('/tgo/v3/05-your-contact-details')
-        : res.redirect('/tgo/v3/04d-no-permission-end')
+        ? res.redirect('/tgo/v3/06-your-contact-details')
+        : res.redirect('/tgo/v3/05d-no-permission-end')
 })
 
 router.post('/tgo/v3/other-addresses-redirect', function (req, res) {
     req.session.data['has-other-addresses'] === "yes"
-        ? res.redirect('/tgo/v3/06a-what-is-other-address')
-        : res.redirect('/tgo/v3/07-local-council')
+        ? res.redirect('/tgo/v3/07a-what-is-other-address')
+        : res.redirect('/tgo/v3/08-local-council')
 })
 
-router.post('/tgo/v3/07a-council-services', (req, res) => {
+router.post('/tgo/v3/08a-council-services', (req, res) => {
     req.session.data['has-other-addresses'] === "yes"
-        ? res.redirect('/tgo/v3/07b-local-council')
-        : res.redirect('/tgo/v3/08-in-hospital')
+        ? res.redirect('/tgo/v3/08b-local-council')
+        : res.redirect('/tgo/v3/09-in-hospital')
+})
+
+router.post('/tgo/v3/09-in-hospital', (req, res) => {
+    req.session.data['in-hospital'] === "yes"
+        ? res.redirect('/tgo/v3/09b-which-hospital')
+        : blueBadgePickerV3(req, res)
 })
 
 const blueBadgePickerV3 = (req, res) => {
     req.session.data['has-other-addresses'] === "yes"
-        ? res.redirect('/tgo/v3/09a-blue-badge-multi-council')
-        : res.redirect('/tgo/v3/09-blue-badge')
+        ? res.redirect('/tgo/v3/10a-blue-badge-multi-council')
+        : res.redirect('/tgo/v3/10-blue-badge')
 }
 
-router.post('/tgo/v3/08-in-hospital', (req, res) => {
-    req.session.data['in-hospital'] === "yes"
-        ? res.redirect('/tgo/v3/08b-which-hospital')
-        : blueBadgePickerV3(req, res)
-})
+router.post('/tgo/v3/09b-which-hospital', blueBadgePickerV3)
 
-router.post('/tgo/v3/08b-which-hospital', blueBadgePickerV3)
-
-router.post('/tgo/v3/09-blue-badge', (req, res) => {
+router.post('/tgo/v3/10-blue-badge', (req, res) => {
     req.session.data['blue-badge'].includes("yes")
-        ? res.redirect("/tgo/v3/09b-what-to-do-about-blue-badge")
-        : res.redirect("/tgo/v3/10-keeper-of-vehicle")
+        ? res.redirect("/tgo/v3/10b-what-to-do-about-blue-badge")
+        : res.redirect("/tgo/v3/11-keeper-of-vehicle")
 })
 
-router.post('/tgo/v3/10-keeper-of-vehicle', (req, res) => {
+router.post('/tgo/v3/11-keeper-of-vehicle', (req, res) => {
     req.session.data['keeper-of-vehicle'] === "yes"
-        ? res.redirect('/tgo/v3/10a-what-to-do-about-vehicles')
-        : res.redirect('/tgo/v3/11-driving-license')
+        ? res.redirect('/tgo/v3/11a-what-to-do-about-vehicles')
+        : res.redirect('/tgo/v3/12-driving-license')
 })
 
 router.post('/tgo/v3/search-address-redirect', function (req, res) {
     switch (req.session.data['house-number-name']) {
         case "0":
-            res.redirect('/tgo/v3/05c-no-address-found')
+            res.redirect('/tgo/v3/06c-no-address-found')
             break;
         case "1":
-            res.redirect('/tgo/v3/05e-confirm-address')
+            res.redirect('/tgo/v3/06e-confirm-address')
             break;
         default:
-            res.redirect('/tgo/v3/05b-select-address')
+            res.redirect('/tgo/v3/06b-select-address')
             break;
     }
 })
@@ -245,13 +245,25 @@ router.post('/tgo/v3/search-address-redirect', function (req, res) {
 router.post('/tgo/v3/further-address-search-redirect', function (req, res) {
     switch (req.session.data['further-address-house-number-name']) {
         case "0":
-            res.redirect('/tgo/v3/06c-further-address-no-address-found')
+            res.redirect('/tgo/v3/07c-further-address-no-address-found')
             break;
         case "1":
-            res.redirect('/tgo/v3/06e-confirm-further-address')
+            res.redirect('/tgo/v3/07e-confirm-further-address')
             break;
         default:
-            res.redirect('/tgo/v3/06b-select-further-address')
+            res.redirect('/tgo/v3/07b-select-further-address')
+            break;
+    }
+})
+
+router.post('/tgo/v3/one-login/create-choose-otp-method', function (req, res) {
+    switch (req.session.data['security-code']) {
+        case "otp-auth":
+            res.redirect('/tgo/v3/one-login/signup/create-otp-auth')
+            break;
+        case "otp-sms":
+        default:
+            res.redirect('/tgo/v3/one-login/signup/create-otpsms')
             break;
     }
 })
