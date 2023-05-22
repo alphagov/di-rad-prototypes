@@ -1,0 +1,57 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Other addresses for the deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="other-addresses-redirect" method="post">
+
+        {{ govukRadios({
+          name: "has-other-addresses",
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              text: "Was the person living at another address?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          },
+          hint: {
+            html: '
+        <p>The following address appears on the death certificate:</p>
+        <div class="govuk-inset-text">
+          15 Bradville Gardens, Bristol, Avon and Somerset, BS41 9AS, United Kingdom
+        </div>
+        <p>If the person who has died was living at another address, we may need to inform a different council about the death. They may have been paying council tax or receiving council services at this address.</p>
+        '
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

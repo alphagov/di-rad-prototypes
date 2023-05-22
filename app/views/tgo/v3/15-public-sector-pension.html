@@ -1,0 +1,61 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+  Public section pension – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        We found multiple public sector pensions
+      </h1>
+
+      <form class="form" action="16-check-your-answers" method="get">
+
+        <p class="govuk-body">We found multiple public sector pensions</p>
+
+        {{ govukCheckboxes({
+          name: "pension",
+          fieldset: {
+            legend: {
+              text: "Who do you want us to inform?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "civil-service",
+              text: "My Civil Service pension"
+            },
+            {
+              value: "nhs",
+              text: "NHS England and Wales"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

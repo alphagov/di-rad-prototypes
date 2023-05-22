@@ -1,0 +1,44 @@
+{% extends "layouts/tgo.html" %}
+
+{% block pageTitle %}
+    Relationship to deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+    {{ super() }}
+    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Do you have permission from the spouse, next of kin or person dealing with the
+                estate?</h1>
+
+            <form class="form" action="do-you-have-permission-redirect" method="post">
+
+                {{ govukRadios({
+                    classes: "govuk-radios--inline",
+                    name: "do-you-have-permission",
+                    items: [
+                        {
+                            value: "yes",
+                            text: "Yes"
+                        },
+                        {
+                            value: "no",
+                            text: "No"
+                        }
+                    ]
+                }) }}
+
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
