@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+  Save and return demo
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Save and resume demo
+      </h1>
+
+
+      {{ govukInsetText({
+        text: "Not signed in"
+      }) }}
+
+      <form action="summary" method="post">
+
+
+        {{ govukInput({
+          label: {
+            text: "Enter a number",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "remembered-number",
+          name: "remembered-number"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

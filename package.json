@@ -11,6 +11,7 @@
     "govuk-frontend": "^4.6.0",
     "govuk-prototype-kit": "^13.7.0",
     "jquery": "^3.7.0",
-    "notifications-node-client": "^7.0.0"
+    "notifications-node-client": "^7.0.0",
+    "openid-client": "^5.4.2"
   }
 }
