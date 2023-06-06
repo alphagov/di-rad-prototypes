@@ -1,14 +1,9 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
   Department for Work and Pensions – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +15,7 @@
       </h1>
       <p class="govuk-body">We can notify DWP, which will contact you about applying for bereavement support.</p>
 
-      <form class="form" action="15-hmrc" method="get">
+      <form class="form" action="14-hmrc" method="get">
 
 
         {{ govukWarningText({

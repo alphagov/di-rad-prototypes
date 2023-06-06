@@ -1,28 +1,23 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {% block pageTitle %}
-    Blue badge – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-    {{ super() }}
-    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+    Bristol Council services – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form class="form" action="10-blue-badge" method="post">
+            <form class="form" action="09-blue-badge" method="post">
 
                 {{ govukRadios({
                     name: "blue-badge",
                     fieldset: {
                         legend: {
-                            text: "Did they have a Blue Badge?",
+                            text: "Did they have a blue badge issued by Bristol City Council?",
                             isPageHeading: true,
                             classes: "govuk-fieldset__legend--l"
                         }
@@ -30,12 +25,8 @@
                     hint: {text: "Blue Badges, also known as disability parking permits, are managed by local councils."},
                     items: [
                         {
-                            value: "yes-bristol",
-                            text: "Yes, issued by Bristol City Council"
-                        },
-                        {
-                            value: "yes-lancaster",
-                            text: "Yes, issued by Camden Council"
+                            value: "yes",
+                            text: "Yes"
                         },
                         {
                             value: "no",

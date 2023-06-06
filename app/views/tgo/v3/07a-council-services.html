@@ -1,4 +1,4 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
@@ -7,24 +7,19 @@
     Bristol Council services – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-    {{ super() }}
-    <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
 {% block content %}
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l">We will inform Camden Council about the death</h1>
-            <p class="govuk-body">Camden Council may contact you with follow up information.</p>
+            <h1 class="govuk-heading-l">We will inform Bristol City Council about the death</h1>
+            <p class="govuk-body">Bristol City Council may contact you with follow up information.</p>
 
             {{ govukWarningText({
                 text: "If the person who died lived in council accommodation, paid council tax, or received housing benefit there may be changes and the relevant team will contact you with updates.",
                 iconFallbackText: "Warning"
             }) }}
 
-            <form class="form" action="09-in-hospital" method="get">
+            <form class="form" action="08-in-hospital" method="get">
 
                 {{ govukCheckboxes({
                     name: "nationality",

@@ -1,15 +1,10 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 
 {% block pageTitle %}
   Local council – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,7 +19,7 @@
         {% endif %}
       </h1>
 
-      <form class="form" action="08a-council-services" method="get">
+      <form class="form" action="07a-council-services" method="post">
         <p class="govuk-body">For this address</p>
         <div class="govuk-inset-text">
           15 Bradville Gardens, Bristol, Avon and Somerset, BS41 9AS, United Kingdom

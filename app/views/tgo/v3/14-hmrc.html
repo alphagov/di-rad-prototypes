@@ -1,14 +1,9 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
   HMRC – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +15,7 @@
       </h1>
       <p class="govuk-body">We can notify  HMRC about the death.</p>
 
-      <form class="form" action="16-public-sector-pension" method="get">
+      <form class="form" action="15-public-sector-pension" method="get">
 
 
         {{ govukWarningText({

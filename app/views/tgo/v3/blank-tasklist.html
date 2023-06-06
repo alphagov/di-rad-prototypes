@@ -1,0 +1,200 @@
+{% extends "layouts/rad.html" %}
+
+{% block pageTitle %}
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half"><a class="govuk-back-link"
+                                               href="javascript:window.history.back()">Back</a></div>
+    <div class="govuk-grid-column-one-half"><p
+            class="govuk-!-text-align-right govuk-!-margin-top-3 govuk-body govuk-!-font-size-16"><a href="#">Exit
+        and save progress</a></p></div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Report a death
+        </h1>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 14 sections.</p>
+
+        <ol class="govuk-prototype-kit-task-list">
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">1. </span> Death registration
+                    details
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="04-registration-details-found">
+                  Confirm registration details
+                </a>
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Not
+                            started</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">2. </span> About you
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Your relationship to the deceased
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Your contact details
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">3. </span> Local council and
+                    hospital details
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Local council
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Were they in hospital before they died?
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">4. </span> Blue badge and vehicles
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Blue badge details
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Vehicles owned by the deceased
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">5. </span> Driving licence and
+                    passport
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Driving licence confirmation
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Passport confirmation
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">6. </span> Departments to notify
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Department for Work and Pensions
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  HM Revenue & Customs
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">7. </span> Pensions
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Public sector pensions
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="govuk-prototype-kit-task-list__section">
+                    <span class="govuk-prototype-kit-task-list__section-number">8. </span> Check and submit
+                </h2>
+                <ul class="govuk-prototype-kit-task-list__items">
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Check your answers
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                    <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                  Submit
+              </span>
+                        <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag">Cannot start
+                            yet</strong>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</div>
+
+{% endblock %}

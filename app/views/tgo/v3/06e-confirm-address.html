@@ -1,13 +1,8 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block pageTitle %}
   Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +14,7 @@
         Confirm address
       </h1>
 
-      <form class="form" action="07-other-addresses" method="post">
+      <form class="form" action="07-local-council" method="post">
 
         <div class="govuk-inset-text">
           {% if data['address'] %}

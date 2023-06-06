@@ -1,12 +1,7 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 
 {% block pageTitle %}
   Passport – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +13,7 @@
         We found a passport
       </h1>
 
-      <form class="form" action="14-dwp" method="get">
+      <form class="form" action="13-dwp" method="get">
 
         <p class="govuk-body">His Majesty’s Passport Office (HMPO) has confirmed that the person who has died had an active passport.</p>
 

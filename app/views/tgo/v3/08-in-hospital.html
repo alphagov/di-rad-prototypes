@@ -1,20 +1,15 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
   Were they in hospital – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="09-in-hospital" method="post">
+      <form class="form" action="08-in-hospital" method="post">
 
         {{ govukRadios({
           name: "in-hospital",

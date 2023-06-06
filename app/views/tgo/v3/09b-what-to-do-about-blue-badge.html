@@ -1,12 +1,7 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 
 {% block pageTitle %}
   Blue badge – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +13,7 @@
         What to do about the Blue Badge
       </h1>
 
-      <form class="form" action="11-keeper-of-vehicle" method="get">
+      <form class="form" action="10-keeper-of-vehicle" method="get">
 
         <p class="govuk-body">The Blue Badge should be returned to the issuing council as displayed on the badge.</p>
 

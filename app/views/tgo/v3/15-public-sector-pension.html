@@ -1,12 +1,7 @@
-{% extends "layouts/tgo.html" %}
+{% extends "layouts/save-and-return.html" %}
 
 {% block pageTitle %}
   Public section pension – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ super() }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +13,7 @@
         We found multiple public sector pensions
       </h1>
 
-      <form class="form" action="17-check-your-answers" method="get">
+      <form class="form" action="16-check-your-answers" method="get">
 
         <p class="govuk-body">We found multiple public sector pensions</p>
 
