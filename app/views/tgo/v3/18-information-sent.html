@@ -1,74 +1,150 @@
 {% extends "layouts/tgo.html" %}
 
 {% block pageTitle %}
-  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Information sent</h1>
-        <div class="govuk-panel__body">
-          Your reference number<br><strong>TGO SBPT GLAS</strong>
-        </div>
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Information sent</h1>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>TGO SBPT GLAS</strong>
       </div>
-
-      <p class="govuk-body govuk-!-margin-top-9">
-        <a href="#">
-        Print or save this page
-        </a>
-      </p>
-      <p class="govuk-body govuk-!-font-weight-bold">A copy of this has been sent to your.email@example.com</p>
-      <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-2">Thank you for reporting Jane Smith's death.</p>
-      <p class="govuk-body govuk-!-margin-bottom-2">Please take a note of your reference number in case you need to contact us.</p>
-      <p class="govuk-body">Using this service does not form any part of a claim to benefits.</p>
-
-      <h2 class="govuk-heading-l">What happens next</h2>
-      <p class="govuk-body">The organisations you have told about the death will update their records. They will not need to see the death certificate.
-        <br>If they need more information, they will contact the next of kin or person dealing with the estate.
-        <br>Below is a list of the organisations you have given permission for us to share information with.</p>
-
-      <h2 class="govuk-heading-l">Check if you can get financial help</h2>
-      <p class="govuk-body">You could be eligible for <a href="#">help with funeral costs</a> if you get certain benefits.
-        <br>If your husband, wife or civil partner has died, and you're under State Pension age, you could be <a href="#">entitled to Bereavement Support Payment.</a>
-        <br>You can call the DWP Bereavement Service free of charge and they can check if you're eligible and make an application.</p>
-
-      <p class="govuk-body">Telephone: 0800 731 0469
-        <br>Textphone: 0800 731 0464
-        <br>Welsh language telephone: 0800 731 0453
-        <br>Welsh language Textphone: 0800 731 0456</p>
-
-      <p class="govuk-body"><a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 731 0469
-        <br><a href="#">Video relay service</a> for British Sign Language (BSL) users.</p>
-
-      <h2 class="govuk-heading-l">Emotional help and support</h2>
-      <p class="govuk-body">There are organisations who can help if you're dealing with a bereavement, or supporting someone who is.</p>
-
-      <h3 class="govuk-heading-s">Cruse Bereavement Care</h3>
-
-      <p class="govuk-body">Cruse offer emotional support to anyone affected by bereavement:</p>
-      <p class="govuk-body">Telephone: freephone 0808 808 1677</p>
-      <p class="govuk-body">Website: <a href="#">www.cruse.org.uk</a></p>
-      <p class="govuk-body">Scotland has a dedicated Cruse helpline and website:</p>
-      <p class="govuk-body">Telephone: freephone 0808 802 6161</p>
-      <p class="govuk-body">Website: <a href="#">www.crusescotland.org.uk</a></p>
-      <p class="govuk-body">All calls are free of charge</p>
-
-      <h3 class="govuk-heading-s">The Silver Line</h3>
-
-      <p class="govuk-body">The Silver Line offers a free confidential helpline for older people which is open 24 hours a day.</p>
-      <p class="govuk-body">Telephone: 0800 470 8090</p>
-      <p class="govuk-body">Website: <a href="#">www.thesilverline.org.uk</a></p>
-
-      <h2 class="govuk-heading-l">Who else to tell about a death</h2>
-      <p class="govuk-body">Use this <a href="19-checklist">checklist to consider who else to tell about the death</a></p>
-
-      <h2 class="govuk-heading-l">Feedback</h2>
-      <p class="govuk-body"><a href="#">What did you think of this service?</a> (Takes 30 seconds)</p>
     </div>
+
+    <p class="govuk-body govuk-!-margin-top-9">
+      <a href="#">
+        Print or save this page
+      </a>
+    </p>
+    <p class="govuk-body govuk-!-font-weight-bold">A copy of this has been sent to your.email@example.com</p>
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-2">Thank you for reporting Jane Smith's
+      death.</p>
+    <p class="govuk-body">Using this service does not form any part of a claim to benefits.</p>
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+    <p class="govuk-body">
+      The organisations you have told about the death will update their records.
+      They will not need to see the death certificate.
+      If they need more information, they will contact you.
+    </p>
+    <p class="govuk-body">Use your <strong>One Login</strong> account to check for updates. These will generally
+      appear after 2 weeks.</p>
+
+    <h2 class="govuk-heading-l">Who still needs to be informed</h2>
+    <p class="govuk-body">You have chosen not to share details with the following organisations:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Driver and Vehicle Licensing Agency (DVLA)</strong></li>
+    </ul>
+
+    <p class="govuk-body">Other organisations that may still need to be informed include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Child Benefit Office</strong> if Jane Smith was claiming child benefit</li>
+      <li><strong>Tax Credit Office</strong> if Jane Smith was claiming tax credits</li>
+      <li><strong>Pension Tracing Service</strong> to find details of Jane Smith's personal or workplace
+        pension
+      </li>
+      <li><strong>Veterans UK</strong> if Jane Smith had an armed forces pension</li>
+    </ul>
+
+    <p class="govuk-body">Contact details for these organisations appear at the bottom of this page.</p>
+
+    <h2 class="govuk-heading-l">Who else to tell about a death</h2>
+    <p class="govuk-body">Use this <a href="19-checklist">checklist to consider who else to tell about the
+      death</a></p>
+
+    <h2 class="govuk-heading-l">Check if you can get financial help</h2>
+    <p class="govuk-body">You could be eligible for <a href="#">help with funeral costs</a> if you get certain
+      benefits.
+      <br>If your husband, wife or civil partner has died, and you're under State Pension age, you could be <a
+              href="#">entitled to Bereavement Support Payment.</a>
+      <br>You can call the DWP Bereavement Service free of charge and they can check if you're eligible and
+      make an application.</p>
+
+    <p class="govuk-body">Telephone: 0800 731 0469
+      <br>Textphone: 0800 731 0464
+      <br>Welsh language telephone: 0800 731 0453
+      <br>Welsh language Textphone: 0800 731 0456</p>
+
+    <p class="govuk-body"><a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800
+      731 0469
+      <br><a href="#">Video relay service</a> for British Sign Language (BSL) users.</p>
+
+    <h2 class="govuk-heading-l">Emotional help and support</h2>
+    <p class="govuk-body">There are organisations who can help if you're dealing with a bereavement, or
+      supporting someone who is.</p>
+
+    <h3 class="govuk-heading-s">Cruse Bereavement Care</h3>
+
+    <p class="govuk-body">Cruse offer emotional support to anyone affected by bereavement:</p>
+    <p class="govuk-body">Telephone: freephone 0808 808 1677</p>
+    <p class="govuk-body">Website: <a href="#">www.cruse.org.uk</a></p>
+    <p class="govuk-body">Scotland has a dedicated Cruse helpline and website:</p>
+    <p class="govuk-body">Telephone: freephone 0808 802 6161</p>
+    <p class="govuk-body">Website: <a href="#">www.crusescotland.org.uk</a></p>
+    <p class="govuk-body">All calls are free of charge</p>
+
+    <h3 class="govuk-heading-s">The Silver Line</h3>
+
+    <p class="govuk-body">The Silver Line offers a free confidential helpline for older people which is open 24
+      hours a day.</p>
+    <p class="govuk-body">Telephone: 0800 470 8090</p>
+    <p class="govuk-body">Website: <a href="#">www.thesilverline.org.uk</a></p>
+
+    <h2 class="govuk-heading-l">Organisations to inform about the death</h2>
+
+    <h3 class="govuk-heading-m">DVLA</h3>
+    <p class="govuk-body">Contact DVLA for advice regarding a death.</p>
+    <p class="govuk-body">Telephone: <strong>0300 083 0090</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monday to Friday, 8am to 7pm</li>
+      <li>Saturdays, 8am to 2pm</li>
+      <li>Public holidays, Closed</li>
+    </ul>
+    <p class="govuk-body">Website: <a href="https://www.gov.uk/tell-dvla-about-bereavement">https://www.gov.uk/tell-dvla-about-breavement</a>
+    </p>
+
+    <h3 class="govuk-heading-m">Tax Credits Office</h3>
+    <p class="govuk-body">Call HMRC</p>
+    <p class="govuk-body">Telephone: <strong>0345 300 3900</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monday to Friday, 8am to 6pm</li>
+      <li>Closed weekends and bank holidays.</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Child Benefit Office</h3>
+    <p class="govuk-body">Call HMRC</p>
+    <p class="govuk-body">Telephone: <strong>0345 300 3100</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monday to Friday: 8am to 6pm</li>
+      <li>Closed weekends and bank holidays</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Pension Tracing Service</h3>
+    <p class="govuk-body">Call the MOD's Veterans UK helpline</p>
+    <p class="govuk-body">Telephone: <strong>0800 731 0193</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monday to Friday: 10am to 3pm</li>
+      <li>Closed weekends and bank holidays.</li>
+    </ul>
+    <p class="govuk-body">Website: <a href="https://www.gov.uk/find-pension-contact-details">https://www.gov.uk/find-pension-contact-details</a> </p>
+
+    <h3 class="govuk-heading-m">Veterans UK</h3>
+    <p class="govuk-body">Call the MOD's Veterans UK helpline</p>
+    <p class="govuk-body">Telephone: <strong>0808 1914 2 18</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monday to Friday: 8am to 4pm</li>
+      <li>Closed weekends and bank holidays.</li>
+    </ul>
+    <p class="govuk-body">Website: <a href="https://www.gov.uk/guidance/veterans-uk-contact-us">https://www.gov.uk/guidance/veterans-uk-contact-us</a></p>
+
+    <h2 class="govuk-heading-l">Feedback</h2>
+    <p class="govuk-body"><a href="#">What did you think of this service?</a> (Takes 30 seconds)</p>
   </div>
+</div>
 
 {% endblock %}
