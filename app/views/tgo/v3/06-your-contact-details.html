@@ -1,5 +1,7 @@
 {% extends "layouts/save-and-return.html" %}
 
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
 {% block pageTitle %}
   Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -51,7 +53,7 @@
           name: "email-address"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ buttonSaveAndReturn() }}
 
       </form>
 

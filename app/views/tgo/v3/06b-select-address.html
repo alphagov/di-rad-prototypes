@@ -1,4 +1,6 @@
 {% extends "layouts/save-and-return.html" %}
+
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
@@ -40,6 +42,9 @@
         }) }}
         <button class="govuk-button" data-module="govuk-button">Use this address</button>
         <p class="govuk-body"><a href="06d-enter-address-manually">Enter address manually</a></p>
+        <p>
+          <a href="one-login/gov-account" class="govuk-link govuk-link--no-visited-state">Save and return later</a>
+        </p>
 
       </form>
 

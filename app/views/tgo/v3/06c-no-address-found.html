@@ -1,5 +1,7 @@
 {% extends "layouts/save-and-return.html" %}
 
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
 {% block pageTitle %}
   Your contact details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -17,6 +19,9 @@
 
       <p class="govuk-body"><a href="06a-find-address">Search again</a></p>
       <p class="govuk-body"><a href="06d-enter-address-manually">Enter address manually</a></p>
+      <p>
+        <a href="one-login/gov-account" class="govuk-link govuk-link--no-visited-state">Save and return later</a>
+      </p>
 
     </div>
   </div>

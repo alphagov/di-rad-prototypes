@@ -1,4 +1,6 @@
 {% extends "layouts/save-and-return.html" %}
+
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -55,7 +57,7 @@
         }) }}
         <p class="govuk-body">In areas with more than one level of council, for example where there are county and district councils, notifications will be directed to the relevant authority.</p>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ buttonSaveAndReturn() }}
       </form>
 
     </div>

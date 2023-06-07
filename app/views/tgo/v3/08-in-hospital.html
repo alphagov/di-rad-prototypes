@@ -1,4 +1,6 @@
 {% extends "layouts/save-and-return.html" %}
+
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
@@ -39,7 +41,7 @@
           ]
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ buttonSaveAndReturn() }}
 
       </form>
 

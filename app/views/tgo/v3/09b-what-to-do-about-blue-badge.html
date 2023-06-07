@@ -1,5 +1,7 @@
 {% extends "layouts/save-and-return.html" %}
 
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
 {% block pageTitle %}
   Blue badge – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -17,7 +19,7 @@
 
         <p class="govuk-body">The Blue Badge should be returned to the issuing council as displayed on the badge.</p>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ buttonSaveAndReturn() }}
 
       </form>
 

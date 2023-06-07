@@ -1,5 +1,10 @@
 {% extends "layouts/save-and-return.html" %}
 
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
+
 {% block pageTitle %}
     Relationship to deceased – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -31,7 +36,7 @@
                     ]
                 }) }}
 
-                <button class="govuk-button" data-module="govuk-button">Continue</button>
+                {{ buttonSaveAndReturn() }}
 
             </form>
 

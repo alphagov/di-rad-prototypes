@@ -1,5 +1,7 @@
 {% extends "layouts/save-and-return.html" %}
 
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
@@ -77,7 +79,7 @@
                     ]
                 }) }}
 
-                <button class="govuk-button" data-module="govuk-button">Continue</button>
+                {{ buttonSaveAndReturn() }}
 
             </form>
 
