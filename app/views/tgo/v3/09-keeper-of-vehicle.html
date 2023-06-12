@@ -1,29 +1,24 @@
 {% extends "layouts/save-and-return.html" %}
 
 {% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
-  Were they in hospital – {{ serviceName }} – GOV.UK Prototype Kit
+  Vehicles – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="08-in-hospital" method="post">
+      <h1 class="govuk-heading-l">Were they the registered keeper of one or more vehicles?</h1>
+      <form class="form" action="09-keeper-of-vehicle" method="post">
 
         {{ govukRadios({
-          name: "in-hospital",
+          name: "keeper-of-vehicle",
           fieldset: {
             legend: {
-              text: "Were they in hospital for 28 days or more before their death?",
-              classes: "govuk-fieldset__legend--l",
-              isPageHeading: true
+              text: "This includes vehicles issued as part of a disability support package"
             }
-          },
-          hint: {
-            text: 'If the person who has died was receiving benefits, the Department of Work and Pensions (DWP) may need to make adjustments'
           },
           items: [
             {

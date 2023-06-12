@@ -210,22 +210,16 @@ router.post('/tgo/v3/search-address-redirect', function (req, res) {
     }
 })
 
-router.post('/tgo/v3/08-in-hospital', (req, res) => {
-    req.session.data['in-hospital'] === "yes"
-        ? res.redirect('/tgo/v3/08b-which-hospital')
-        : res.redirect('/tgo/v3/09-blue-badge')
-})
-
-router.post('/tgo/v3/09-blue-badge', (req, res) => {
+router.post('/tgo/v3/08-blue-badge', (req, res) => {
     req.session.data['blue-badge'].includes("yes")
-        ? res.redirect("/tgo/v3/09b-what-to-do-about-blue-badge")
-        : res.redirect("/tgo/v3/10-keeper-of-vehicle")
+        ? res.redirect("/tgo/v3/08b-what-to-do-about-blue-badge")
+        : res.redirect("/tgo/v3/09-keeper-of-vehicle")
 })
 
-router.post('/tgo/v3/10-keeper-of-vehicle', (req, res) => {
+router.post('/tgo/v3/09-keeper-of-vehicle', (req, res) => {
     req.session.data['keeper-of-vehicle'] === "yes"
-        ? res.redirect('/tgo/v3/10a-what-to-do-about-vehicles')
-        : res.redirect('/tgo/v3/11-driving-license')
+        ? res.redirect('/tgo/v3/09a-what-to-do-about-vehicles')
+        : res.redirect('/tgo/v3/10-driving-license')
 })
 
 router.post('/tgo/v3/one-login/create-choose-otp-method', function (req, res) {
