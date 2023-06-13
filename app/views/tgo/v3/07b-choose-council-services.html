@@ -1,0 +1,71 @@
+{% extends "layouts/save-and-return.html" %}
+
+{% from "macros/button-save-and-return/macro.njk" import buttonSaveAndReturn %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{% block pageTitle %}
+  Bristol Council services – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="08-blue-badge" method="get">
+
+        {{ govukCheckboxes({
+          name: "nationality",
+          fieldset: {
+            legend: {
+              text: "Which council services do you want to inform?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "electoral",
+              text: "Electoral services",
+              hint: {text: "To remove the person from the register used for voting in local and national elections"}
+            },
+            {
+              value: "council-housing",
+              text: "Council housing team",
+              hint: {text: "If they lived in council accommodation"}
+            },
+            {
+              value: "housing-benefit",
+              text: "Housing benefit team",
+              hint: {text: "If the received housing benefit"}
+            },
+            {
+              value: "council-tax",
+              text: "Council tax team",
+              hint: {text: "If they paid council tax or they received a discount or exemption"}
+            },
+            {
+              value: "adult-services",
+              text: "Adult services",
+              hint: {text: "If they received financial assistance for care at home or for being in a nursing home. Or if they received other services like Meals on Wheels"}
+            },
+            {
+              value: "library-team",
+              text: "Library team",
+              hint: {text: "If they had library membership"}
+            },
+            {
+              value: "concessionary-travel",
+              text: "Concessionary travel",
+              hint: {text: "If they had a bus or travel pass issued by the council"}
+            }
+          ]
+        }) }}
+
+        {{ buttonSaveAndReturn() }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

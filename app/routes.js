@@ -210,6 +210,12 @@ router.post('/tgo/v3/search-address-redirect', function (req, res) {
     }
 })
 
+router.post('/tgo/v3/07a-council-services', (req, res) => {
+    req.session.data['council-services'] === 'some'
+        ? res.redirect('/tgo/v3/07b-choose-council-services')
+        : res.redirect('/tgo/v3/08-blue-badge')
+})
+
 router.post('/tgo/v3/08-blue-badge', (req, res) => {
     req.session.data['blue-badge'].includes("yes")
         ? res.redirect("/tgo/v3/08b-what-to-do-about-blue-badge")
