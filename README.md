@@ -1,4 +1,4 @@
-# gdx-vision-prototypes
+# di-rad-prototypes
 
 Automatically deploys to: 
 
