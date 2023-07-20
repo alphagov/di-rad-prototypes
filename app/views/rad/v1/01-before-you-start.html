@@ -1,0 +1,171 @@
+{% extends "layouts/rad.html" %}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <style>
+        .app-step-nav__step--active:after, :before {
+            display: none;
+        }
+
+        .app-step-nav__circle {
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+
+        .app-step-nav__paragraph {
+            padding-top: 15px;
+            padding-bottom: 15px !important;
+        }
+
+        .app-step-nav__panel {
+            padding: 12px 0;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Before you start</h1>
+            <p class="govuk-body">
+                This service helps you to report the death of Mr John Smith to government organisations, local councils,
+                pension holders (public and private sector), and other entities before you have attended your
+                appointment at the Milton Keynes register office.
+            </p>
+            <h2 class="govuk-heading-l"> Report a Death step by step overview</h2>
+
+
+            <div data-module="appstepnav" id="step-by-step-navigation" class="app-step-nav app-step-nav--large"
+                 data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps"
+                 data-hide-all-text="Hide all steps">
+                <ol class="app-step-nav__steps">
+                    <li class="app-step-nav__step app-step-nav__step--active step-is-shown"
+                        id="check-you-re-allowed-to-drive">
+                        <div data-position="1">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span
+                              class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel" id="step-panel-check-you-re-allowed-to-drive-1">
+                            <p class="app-step-nav__paragraph">Report the death to DWP to stop pension payments and
+                                understand the financial impact on you</p>
+                        </div>
+
+                    </li>
+
+                    <li class="app-step-nav__step app-step-nav__step--active step-is-shown"
+                        id="get-a-provisional-licence">
+                        <div class="js-toggle-panel" data-position="2">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span
+                              class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
+                            <p class="app-step-nav__paragraph">
+                                Prepare for your appointment by entering information about John Smith to share
+                                with
+                                other Government departments after the appointment. You can do this at any time
+                                before
+                                the appointment.
+                            </p>
+                        </div>
+
+                    </li>
+
+                    <li class="app-step-nav__step app-step-nav__step--active step-is-shown"
+                        id="driving-lessons-and-practice">
+                        <div class="js-toggle-panel" data-position="3">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span
+                              class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel" id="step-panel--lessons-and-practice-3">
+                            <p class="app-step-nav__paragraph">Attend your registration appointment</p>
+                        </div>
+
+                    </li>
+
+                    <li class="app-step-nav__step app-step-nav__step--active step-is-shown"
+                        id="dce">
+                        <div class="js-toggle-panel" data-position="4">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span
+                              class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
+                            <p class="app-step-nav__paragraph">After the death is officially registered by the
+                                Registrar,
+                                the other Government departments will be told about the death</p>
+                        </div>
+
+                    </li>
+                </ol>
+            </div>
+
+
+            {{ govukDetails({
+                summaryText: "Which organisations can be notified?",
+                text: ""
+            }) }}
+
+            <h2 class="govuk-heading-l">Information you need for this service</h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>the name and date of death of the person who’s died</li>
+                <li>details of your relationship to the deceased</li>
+                <li>National Insurance number of the person who has died and date of birth of the surviving spouse</li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Documents you may need for this service</h2>
+            <ul class="govuk-list govuk-list--bullet" style="padding-bottom: 15px">
+                <li>driving licence</li>
+                <li>passport (UK-issued)</li>
+                <li>blue badge for parking, if issued</li>
+            </ul>
+
+            {{ govukButton({
+                text: "Start now",
+                href: "02-check-details",
+                isStartButton: true
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

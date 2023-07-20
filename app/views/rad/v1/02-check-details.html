@@ -1,0 +1,80 @@
+{% extends "layouts/rad.html" %}
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+                Check these details about the person who has died are correct
+            </h1>
+
+            {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                    {
+                        key: {text: "Name"},
+                        value: {text: "John Smith"}
+                    },
+                    {
+                        key: {text: "Date of birth"},
+                        value: {text: "04/10/1950"}
+                    },
+                    {
+                        key: {text: "Registration district"},
+                        value: {text: "Milton Keynes"}
+                    },
+                    {
+                        key: {text: "Date of death"},
+                        value: {text: "20/08/2023"}
+                    }
+                ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Their address</h2>
+
+            {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                    {
+                        key: {text: "House number or name"},
+                        value: {text: "15"}
+                    },
+                    {
+                        key: {text: "Road"},
+                        value: {text: "            Bradville Gardens"}
+                    },
+                    {
+                        key: {text: "Town/City"},
+                        value: {text: "Milton Keynes"}
+                    },
+                    {
+                        key: {text: "County"},
+                        value: {text: "Buckinghamshire"}
+                    },
+                    {
+                        key: {text: "Postcode"},
+                        value: {text: "MK1 1KM"}
+                    },
+                    {
+                        key: {text: "Country"},
+                        value: {text: "United Kingdom"}
+                    }
+                ]
+            }) }}
+
+            {{ govukDetails({
+                summaryText: "If any of these details are wrong",
+                text: ""
+            }) }}
+
+            {{ govukButton({
+                text: "Continue",
+                href: "03-save-progress"
+            }) }}
+        </div>
+    </div>
+{% endblock %}
+
+
+

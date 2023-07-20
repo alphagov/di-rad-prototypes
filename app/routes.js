@@ -239,3 +239,32 @@ router.post('/tgo/v3/one-login/create-choose-otp-method', function (req, res) {
             break;
     }
 })
+
+
+// RAD V1
+
+router.post('/rad/v1/03-save-progress', (req, res) => {
+    req.session.data['save-one-login'] === 'yes' ?
+         res.redirect('/rad/v1/one-login/gov-account')
+        : res.redirect('/rad/v1/04-told-dwp')
+
+})
+
+router.post('/rad/v1/07-spouse', (req, res) => {
+    req.session.data['spouse'] === 'yes' ?
+         res.redirect('/rad/v1/07a-your-details')
+        : res.redirect('/rad/v1/07b1-their-details')
+
+})
+
+router.post('/rad/v1/one-login/create-choose-otp-method', function (req, res) {
+    switch (req.session.data['security-code']) {
+        case "otp-auth":
+            res.redirect('/rad/v1/one-login/signup/create-otp-auth')
+            break;
+        case "otp-sms":
+        default:
+            res.redirect('/rad/v1/one-login/signup/create-otpsms')
+            break;
+    }
+})

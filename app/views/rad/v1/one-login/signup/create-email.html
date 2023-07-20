@@ -1,0 +1,29 @@
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+    Sign In – GOV.UK One Login – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                Enter your email address
+            </h1>
+
+
+            <form class="form" action="create-checkemail" method="get">
+                <div class="govuk-form-group">
+                    <input class="govuk-input govuk-!-width-two-thirds" id="email" name="emailAddress" type="email"
+                           spellcheck="false" aria-describedby="email-hint" autocomplete="email"
+                           aria-label="Enter your email address">
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+                <input class="govuk-input" name="signin" type="hidden" value="create">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
