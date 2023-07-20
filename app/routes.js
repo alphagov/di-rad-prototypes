@@ -217,7 +217,7 @@ router.post('/tgo/v3/07a-council-services', (req, res) => {
 })
 
 router.post('/tgo/v3/08-blue-badge', (req, res) => {
-    req.session.data['blue-badge'].includes("yes")
+    req.session.data['blue-badge'] === "yes"
         ? res.redirect("/tgo/v3/08b-what-to-do-about-blue-badge")
         : res.redirect("/tgo/v3/09-keeper-of-vehicle")
 })
