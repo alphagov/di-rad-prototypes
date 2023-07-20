@@ -3,3 +3,11 @@
 {% set serviceName %}
   Report a death
 {% endset %}
+
+
+{% block beforeContent %}
+{{ super() }}
+{% block backLink %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+{% endblock %}
