@@ -9,24 +9,43 @@
                 Check your answers
             </h1>
             <p class="govuk-body">
-                Please check that the information on this page is correct. It will be used to inform relevant councils,
-                government departments and organisations.
+                Please check that the information on this page is correct.
             </p>
 
             <h2 class="govuk-heading-m">
-                About you
+                About the person who has died
             </h2>
-            <h3 class="govuk-heading-s">Personal details</h3>
-
             {{ govukSummaryList({
                 classes: 'govuk-!-margin-bottom-9',
                 rows: [
                     {
                         key: {text: "Name"},
-                        value: {text: "Joan Smith"}
+                        value: {text: "John Smith"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Date of birth"},
+                        value: {text: "04/10/1950"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Registration district"},
+                        value: {text: "Milton Keynes"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Date of death"},
+                        value: {text: "20/08/2023"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Home address"},
+                        value: {html: "15 Bradville Gardens<br />Milton Keynes<br />Buckinghamshire<br />MK41 9AS"},
+                        actions: {items: [{text: "Change", href: "#"}]}
                     }
                 ]
             }) }}
+
 
 
             {{ govukButton({
