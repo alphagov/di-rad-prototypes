@@ -46,6 +46,59 @@
                 ]
             }) }}
 
+            <h2 class="govuk-heading-m">
+                Informing DWP
+            </h2>
+            {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                    {
+                        key: {text: "Have you already informed DWP?"},
+                        value: {text: "No"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Do you want to inform DWP now?"},
+                        value: {text: "Yes"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "National Insurance Number of the person who has died"},
+                        value: {text: "QQ 12 34 56 A"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Are you the husband, wife or partner of the person who has died?"},
+                        value: {text: "Yes"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    }
+                ]
+            }) }}
+
+            <h2 class="govuk-heading-m">
+                Your details
+            </h2>
+            {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                    {
+                        key: {text: "Name"},
+                        value: {text: "Joan Smith"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Contact telephone number"},
+                        value: {text: "QQ 12 34 56 A"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    },
+                    {
+                        key: {text: "Email address"},
+                        value: {text: "joan.smith@example.com"},
+                        actions: {items: [{text: "Change", href: "#"}]}
+                    }
+                ]
+            }) }}
+
 
 
             {{ govukButton({
