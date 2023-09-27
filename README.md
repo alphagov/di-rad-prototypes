@@ -1,5 +1,3 @@
-# di-rad-prototypes
+# di-rad-prototypes *** Archived ***
 
-Automatically deploys to: 
 
-https://gdx-vision-prototypes.herokuapp.com
